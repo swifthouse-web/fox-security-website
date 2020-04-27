@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { MarkdownModule } from 'ngx-markdown';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -11,6 +13,7 @@ import { MainComponent } from "./components/main/main.component";
 import { ContentComponent } from "./components/content/content.component";
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { RouterModule } from '@angular/router';
+import { ContentService } from './services/content.service';
 
 const COMMON_COMPONENTS = [
   MainComponent,
@@ -29,9 +32,10 @@ const COMMON_COMPONENTS = [
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    MarkdownModule.forRoot()
   ],
-  providers: [],
+  providers: [ContentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
