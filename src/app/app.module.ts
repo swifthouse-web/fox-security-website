@@ -14,6 +14,7 @@ import { ContentComponent } from "./components/content/content.component";
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { RouterModule } from '@angular/router';
 import { ContentService } from './services/content.service';
+import { LogicAppService } from './services/logic-app.service';
 
 const COMMON_COMPONENTS = [
   MainComponent,
@@ -35,7 +36,7 @@ const COMMON_COMPONENTS = [
     RouterModule,
     MarkdownModule.forRoot()
   ],
-  providers: [ContentService],
+  providers: [ContentService, LogicAppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
