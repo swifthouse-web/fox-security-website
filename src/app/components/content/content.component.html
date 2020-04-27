@@ -1,5 +1,5 @@
 <ng-container *ngIf="page">
-  <img class="hero mb-3" [src]="contentUrl(page.page_banner?.formats?.large?.url)">
+  <img class="hero mb-3" [src]="contentUrl(page.page_banner?.formats?.small?.url)">
   <h1>{{page.page_title}}</h1>
 
   <div [innerHtml]="page.page_content">
