@@ -10,11 +10,11 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <ng-container *ngFor="let page of pages">
-        <a *ngIf="!page.page_nav_button" class="nav-item nav-link" [routerLink]="page.page_route">
+        <a *ngIf="!page.nav_button" class="nav-item nav-link" [routerLink]="page.page_name">
           {{page.page_title}}
         </a>
 
-        <button *ngIf="page.page_nav_button float-right" class="btn btn-outline-danger" [routerLink]="page.page_route"
+        <button *ngIf="page.nav_button float-right" class="btn btn-outline-danger" [routerLink]="page.page_name"
           type="button">
           {{page.page_title}}
         </button>
