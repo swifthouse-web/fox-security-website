@@ -21,4 +21,20 @@ export class ContentService {
     return this.http.get(`${environment.cmsUrl}/pages/?page_name_eq=${name}`);
   }
 
+  getDefaults(id) {
+    return this.http.get(`${environment.cmsUrl}/defaults/`);
+  }
+
+  getDownloads(id) {
+    return this.http.get(`${environment.cmsUrl}/downloads/`);
+  }
+
+  getOffers(id) {
+    return this.http.get(`${environment.cmsUrl}/offers/`);
+  }
+
+  getGalleries(id) {
+    return this.http.get(`${environment.cmsUrl}/galleries/`);
+  }
+
 }
