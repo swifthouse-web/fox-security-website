@@ -1,3 +1,8 @@
-<p>
-  main works!
-</p>
+<ng-container *ngIf="page">
+
+  <img class="hero mb-3" [src]="contentUrl(page.page_banner?.url)">
+
+  <div [innerHtml]="page.page_content_primary"></div>
+
+  <div [innerHtml]="page.page_content_secondary"></div>
+</ng-container>
