@@ -44,7 +44,8 @@ export class ContactUsComponent implements OnInit {
   }
 
   applyPage(page) {
-    page[0].page_content = this.markdownService.compile(page[0].page_content);
+    page[0].page_content_primary = this.markdownService.compile(page[0].page_content_primary);
+    page[0].page_content_secondary = this.markdownService.compile(page[0].page_content_secondary);
 
     this.page = page[0];
 
