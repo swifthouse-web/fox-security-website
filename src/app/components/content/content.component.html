@@ -6,7 +6,24 @@
 
     <div [innerHtml]="page.page_content_primary"></div>
 
+    <ng-container *ngIf="gallery">
+      <ng-container *ngFor="let item of gallery">
+
+        <h3>{{item.gallery_name}}</h3>
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-sm-12" *ngFor="let image of item.gallery_images">
+            <img [src]="contentUrl(image.url)" class="img-thumbnail">
+          </div>
+        </div>
+      </ng-container>
+
+    </ng-container>
+
+    <ng-container *ngIf="downloads">
+
+    </ng-container>
 
     <div [innerHtml]="page.page_content_secondary"></div>
+
   </div>
 </ng-container>

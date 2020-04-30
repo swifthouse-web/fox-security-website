@@ -14,6 +14,8 @@ export class ContentComponent implements OnInit {
 
   pageName = this.router.url.replace('/', '');
   page: any;
+  gallery: any[];
+  downloads: any[];
 
   constructor(
     readonly router: Router,
@@ -38,17 +40,26 @@ export class ContentComponent implements OnInit {
     this.page = page[0];
 
     this.titleService.setTitle(`Fox Security - ${this.page.page_title}`);
-    this.meta.addTag(
-      {
-        name: 'description',
-        content: this.page.page_description
-      }
-    );
+    this.meta.addTag({
+      name: 'description',
+      content: this.page.page_description
+    });
+
+    if (this.pageName === 'gallery') {
+      this.contentService.getGalleries()
+        .subscribe((response: any[]) => this.gallery = response);
+    }
+
+    if (this.pageName === 'downloads') {
+      this.contentService.getDownloads()
+        .subscribe((response: any[]) => this.downloads = response);
+    }
   }
 
   contentUrl(url) {
-    if (url)
+    if (url) {
       return `${environment.cmsUrl}${url}`;
+    }
 
     return '';
   }
