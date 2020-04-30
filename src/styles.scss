@@ -3,3 +3,9 @@
 a {
   color: red;
 }
+
+* {
+  :focus {
+    outline: none;
+  }
+}
