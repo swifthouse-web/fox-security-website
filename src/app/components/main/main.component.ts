@@ -14,6 +14,7 @@ export class MainComponent implements OnInit {
 
   pageName = 'home';
   page: any;
+  offers: any[] = [];
 
   constructor(
     readonly router: Router,
@@ -26,6 +27,9 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.contentService.byPageName(this.pageName)
       .subscribe(response => this.applyPage(response));
+
+    this.contentService.getOffers()
+      .subscribe((response: any[]) => this.offers = response);
   }
 
   applyPage(page) {
@@ -44,8 +48,9 @@ export class MainComponent implements OnInit {
   }
 
   contentUrl(url) {
-    if (url)
+    if (url) {
       return `${environment.cmsUrl}${url}`;
+    }
 
     return '';
   }

@@ -1,8 +1,7 @@
 <nav *ngIf="default !== undefined" class="navbar navbar-expand-lg navbar-light bg-light">
   <img class="navbar-brand" routerLink="/" width="150" [src]="contentUrl(default.logo.url)">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -13,8 +12,7 @@
           {{page.page_title}}
         </a>
 
-        <button *ngIf="page.nav_button float-right" class="btn btn-outline-danger" [routerLink]="page.page_name"
-          type="button">
+        <button *ngIf="page.nav_button float-right" class="btn btn-outline-danger" [routerLink]="page.page_name" type="button">
           {{page.page_title}}
         </button>
       </ng-container>
@@ -22,7 +20,7 @@
   </div>
 </nav>
 
-<div *ngIf="default !== undefined" class="container pt-4 pb-4">
+<div *ngIf="default !== undefined" class="pt-4 pb-4">
   <router-outlet></router-outlet>
 </div>
 

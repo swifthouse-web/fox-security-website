@@ -1,8 +1,21 @@
 <ng-container *ngIf="page">
 
-  <img class="hero mb-3" [src]="contentUrl(page.page_banner?.url)">
+  <img class="img-fluid hero mb-3" [src]="contentUrl(page.page_banner?.url)">
 
-  <div [innerHtml]="page.page_content_primary"></div>
+  <div class="container">
+    <div [innerHtml]="page.page_content_primary"></div>
 
-  <div [innerHtml]="page.page_content_secondary"></div>
+    <div class="row">
+      <div *ngFor="let offer of offers" class="col-sm-12 col-md-6 col-lg-4">
+        <img class="img-fluid hero mb-3" [src]="contentUrl(offer?.offer_image?.url)">
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFoxAlarmsSec%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=728728677505915" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      </div>
+    </div>
+
+    <div [innerHtml]="page.page_content_secondary"></div>
+  </div>
+
 </ng-container>
