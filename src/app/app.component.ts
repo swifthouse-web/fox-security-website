@@ -32,10 +32,15 @@ export class AppComponent implements OnInit {
   }
 
   contentUrl(url) {
-    if (url)
+    if (url) {
       return `${environment.cmsUrl}${url}`;
+    }
 
     return '';
+  }
+
+  onActivate(event) {
+    window.scroll(0, 0);
   }
 
 }
