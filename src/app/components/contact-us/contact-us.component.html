@@ -1,6 +1,8 @@
 <ng-container *ngIf="page">
 
-  <img class="img-fluid hero mb-3" [src]="contentUrl(page.page_banner?.url)">
+  <div *ngIf="page.page_banner" class="bg-hero mb-3" [style.background-image]="'url(' + contentUrl(page.page_banner?.url) + ')'">
+    <div class="bg-hero-container"> </div>
+  </div>
 
   <div class="container">
     <h1>{{page.page_title}}</h1>
