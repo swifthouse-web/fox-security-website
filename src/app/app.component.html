@@ -19,7 +19,7 @@
     </div>
     <div style="width: 100%;" class="d-none d-lg-block">
       <ng-container *ngFor="let page of pages">
-        <button *ngIf="page.nav_button" class="btn btn-outline-danger float-right" [routerLink]="page.page_name" type="button">
+        <button *ngIf="page.nav_button" class="btn btn-danger float-right" [routerLink]="page.page_name" type="button">
           {{page.page_title}}
         </button>
       </ng-container>
